@@ -1,0 +1,53 @@
+{% extends "ct_core/base.html" %}
+{% load static %}
+{% block title %}Contato - CT Lucas Silva{% endblock %}
+
+{% block content %}
+    <section class="section-padded">
+        <h1 class="section-title">Entre em Contato</h1>
+        
+        <div class="contact-section">
+            
+            <div class="contact-info">
+                <p>📍 <strong>Endereço:</strong> Rua do Campo, 389, Jóquei Clube, Fortaleza, Ceará.</p>
+                <p>🥋 <strong>Aulas:</strong> Jiu Jitsu para Crianças e Adultos.</p>
+                <p>🧑‍🏫 <strong>Professor:</strong> @lucassilvajiu</p>
+                <p>📞 <strong>Telefone/WhatsApp:</strong> (85) 98606-9802</p>
+                <p>📧 <strong>Email:</strong> contato@ctlucassilva.com</p>
+            </div>
+            
+            <div class="form-group text-center" style="margin-top: 30px;">
+                <a href="https://wa.me/5585986069802?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20aula%20experimental%20de%20Jiu-Jitsu." 
+                   target="_blank" 
+                   class="btn btn-primary btn-large"
+                   style="background-color: #25D366;">
+                    <i class="fab fa-whatsapp"></i> Agende pelo WhatsApp
+                </a>
+                <small style="display: block; margin-top: 10px; color: #aaa;">Clique para falar diretamente com a equipe.</small>
+            </div>
+
+            <hr style="border-color: var(--cor-primaria); margin: 40px 0;">
+
+        </div>
+    </section>
+
+    <section class="section-padded" style="padding-top: 0;">
+        <h2 class="section-title">Nossa Localização</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.332306263593!2d-38.5678834!3d-3.7317769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c744f4d2f63f53%3A0x6338e55581e28989!2sR.%20do%20Campo%2C%20389%20-%20J%C3%B3quei%20Clube%2C%20Fortaleza%20-%20CE%2C%2060510-380!5e0!3m2!1spt-BR!2sbr!4v1700438400000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius: 8px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "ct_core/base.html" %}
+{% load static %}
+
+{% block title %}Galeria - CT Lucas Silva{% endblock %}
+
+{% block content %}
+<section class="gallery-full-section section-padded">
+    <h1 class="section-title">Nossa Galeria de Mídia</h1>
+
+    <div class="full-gallery">
+        {% for item in imagens %}
+        <div class="gallery-card">
+
+            <div class="media-wrapper">
+
+                {# 1. Vídeo via externo (YouTube) #}
+                {% if item.url_video %}
+                    <div class="video-embed-container">
+                        <iframe 
+                            src="{{ item.url_video }}"
+                            frameborder="0"
+                            allow="autoplay; encrypted-media; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                {# 2. Vídeo enviado pelo admin #}
+                {% elif item.is_video_file %}
+                    <video 
+                        controls
+                        preload="metadata"
+                        style="width:100%; height:auto; border-radius:12px;"
+                    >
+                        <source src="{{ item.imagem.url }}">
+                        Seu navegador não suporta vídeos HTML5.
+                    </video>
+
+                {# 3. Imagem enviada pelo admin #}
+                {% elif item.imagem %}
+                    <img 
+                        src="{{ item.imagem.url }}" 
+                        alt="{{ item.titulo }}"
+                        style="width:100%; height:auto; border-radius:12px;"
+                    >
+                {% endif %}
+
+            </div>
+
+            <div class="item-details">
+                <h3 class="item-title">{{ item.titulo }}</h3>
+                <p class="item-date">{{ item.data_evento|date:"d/m/Y" }}</p>
+            </div>
+
+        </div>
+        {% empty %}
+            <p class="text-center">
+                A galeria ainda está vazia. Adicione itens pelo painel administrativo.
+            </p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

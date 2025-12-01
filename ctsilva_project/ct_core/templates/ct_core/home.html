@@ -1,0 +1,17 @@
+{% extends "ct_core/base.html" %}
+{% load static %}
+
+{% block title %}Início - CT Lucas Silva{% endblock %}
+
+{% block content %}
+    <section class="hero-section" style="background-image: url('{% static 'img/bg-home.jpg' %}');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content-wrapper">
+            <div class="hero-buttons">
+                <a href="{% url 'ct_core:planos' %}" class="btn btn-large btn-primary">
+                    Ver Nossos Programas
+                </a>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
